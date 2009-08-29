@@ -1,4 +1,7 @@
-require 'war'
+#!/usr/bin/env ruby
+$: << File.join(File.dirname(__FILE__), '../lib')
+
+require 'cards/war'
 require 'pp'
 
 print "Enter your name [Player 1]: "
