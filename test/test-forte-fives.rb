@@ -211,8 +211,23 @@ class TestForteFivesTrick < Test::Unit::TestCase
     out.add_score $team1, 90
     out.add_score $team2, 90
     assert_equal({$team1 => 85, $team2 => 190}, out.curr_total)
-    puts
-    puts out.to_s
+    scard = <<END
+ bob is great, he give us |    the chocolate cake    
+-----------------------------------------------------
+        15  -   15        |        15  -   15        
+        25  -   40        |         5  -   20        
+       (15) -   25        |        20  -   40        
+       (15) -   10        |        30  -   70        
+       (15) - (  5)       |        30  -  100        
+       (90) - ( 95)       |       (90) -   10        
+       (90) - (185)       |       (90) - ( 80)       
+       (90) - (275)       |       (90) - (170)       
+        90  - (185)       |        90  - ( 80)       
+        90  - ( 95)       |        90  -   10        
+        90  - (  5)       |        90  -  100        
+        90  -   85        |        90  -  190        
+END
+  assert_equal(scard.strip, out.to_s.join("\n").strip)
   end
 
   def test_team

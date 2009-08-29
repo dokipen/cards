@@ -287,7 +287,6 @@ module ForteFives
     # }
     def initialize opts
       opts = DEFAULTS.clone.merge(opts)
-      puts opts
       unless opts[:seat_count]
         raise "opts must have seat_count attr"
       end
