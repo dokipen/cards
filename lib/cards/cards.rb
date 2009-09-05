@@ -63,6 +63,10 @@ module PlayingCards
       self.flatten!
       self
     end
+
+    def to_s
+      "[#{self.join(", ")}]"
+    end
   end
 
   def self.std_deck card_class=Card
